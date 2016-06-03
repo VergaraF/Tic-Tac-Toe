@@ -1,25 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tic_Tac_tOE" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vxj-uJ-kKP">
+                                <rect key="frame" x="20" y="127" width="335" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="4y1-yD-uED"/>
+                                    <constraint firstAttribute="height" constant="335" id="gnT-bf-xOs"/>
+                                </constraints>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="lP8-Gc-bTd">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="ekL-Gz-ZZB"/>
+                                </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="27"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Tic Tac Toe" id="c1L-8Z-QpA"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSt-sf-Q9W">
+                                <rect key="frame" x="36" y="140" width="72" height="68"/>
+                                <state key="normal" backgroundImage="o.png"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lP8-Gc-bTd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="1Jw-Es-ttj"/>
+                            <constraint firstItem="Vxj-uJ-kKP" firstAttribute="top" secondItem="lP8-Gc-bTd" secondAttribute="bottom" constant="72" id="LpB-AY-cxp"/>
+                            <constraint firstItem="Vxj-uJ-kKP" firstAttribute="centerX" secondItem="lP8-Gc-bTd" secondAttribute="centerX" id="Xtv-V7-p0Z"/>
+                            <constraint firstItem="lP8-Gc-bTd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="rrA-Ul-5ym"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lP8-Gc-bTd" secondAttribute="trailing" constant="-20" id="v06-wN-wRj"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="439.5" y="349.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="board.png" width="1156" height="1196"/>
+        <image name="o.png" width="144" height="127"/>
+    </resources>
 </document>
