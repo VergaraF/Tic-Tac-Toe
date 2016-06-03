@@ -10,6 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var button: UIButton!
+    
+    @IBAction func buttonPressed(sender: AnyObject) {
+        sender.setImage(UIImage(named: "x.png"), forState: .Normal)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
