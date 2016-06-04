@@ -143,16 +143,47 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ouu-H1-lCy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's a DRAW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QH-ud-8Dw">
+                                <rect key="frame" x="-4" y="74" width="383" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="1C7-i0-RMc"/>
+                                    <constraint firstAttribute="height" constant="50" id="6Df-RB-nux"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1C7-i0-RMc"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXl-S5-pV2">
+                                <rect key="frame" x="0.0" y="509" width="375" height="49"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="WiJ-aW-4ub"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="9QH-ud-8Dw" firstAttribute="top" secondItem="lP8-Gc-bTd" secondAttribute="bottom" constant="19" id="07k-yC-fYS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EXl-S5-pV2" secondAttribute="trailing" constant="-20" id="0YL-W3-UGs"/>
                             <constraint firstItem="lP8-Gc-bTd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="1Jw-Es-ttj"/>
                             <constraint firstItem="Vxj-uJ-kKP" firstAttribute="top" secondItem="Eu6-wk-zue" secondAttribute="bottom" constant="-198" id="2Au-e9-fd0"/>
                             <constraint firstItem="cMG-WU-2M2" firstAttribute="top" secondItem="Vxj-uJ-kKP" secondAttribute="bottom" constant="-108" id="6J2-GK-dRq"/>
+                            <constraint firstItem="EXl-S5-pV2" firstAttribute="top" secondItem="Vxj-uJ-kKP" secondAttribute="bottom" constant="8" id="9cN-HP-vQ6"/>
                             <constraint firstItem="Vxj-uJ-kKP" firstAttribute="top" secondItem="oSt-sf-Q9W" secondAttribute="bottom" constant="-81" id="BRL-zW-AVn"/>
                             <constraint firstItem="nUy-DH-VXW" firstAttribute="leading" secondItem="I2x-12-kae" secondAttribute="trailing" constant="28" id="GHc-ma-Kzy"/>
                             <constraint firstItem="Eu6-wk-zue" firstAttribute="leading" secondItem="6iT-Em-wAG" secondAttribute="trailing" constant="28" id="Gm0-ju-6h4"/>
                             <constraint firstItem="I2x-12-kae" firstAttribute="top" secondItem="Vxj-uJ-kKP" secondAttribute="bottom" constant="-108" id="PP1-0X-Dxc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9QH-ud-8Dw" secondAttribute="trailing" constant="-20" id="QHQ-AJ-owk"/>
                             <constraint firstItem="KK7-r6-HBh" firstAttribute="leading" secondItem="fmi-EQ-onv" secondAttribute="trailing" constant="28" id="R4p-Nn-m68"/>
                             <constraint firstItem="Vxj-uJ-kKP" firstAttribute="leading" secondItem="fmi-EQ-onv" secondAttribute="trailing" constant="-204" id="SNZ-jf-6OR"/>
                             <constraint firstItem="Vxj-uJ-kKP" firstAttribute="leading" secondItem="I2x-12-kae" secondAttribute="trailing" constant="-204" id="SSg-gx-I6T"/>
@@ -161,20 +192,25 @@
                             <constraint firstItem="Vxj-uJ-kKP" firstAttribute="centerX" secondItem="lP8-Gc-bTd" secondAttribute="centerX" id="Xtv-V7-p0Z"/>
                             <constraint firstItem="Vxj-uJ-kKP" firstAttribute="leading" secondItem="oSt-sf-Q9W" secondAttribute="trailing" constant="-91" id="ZRs-cR-kSF"/>
                             <constraint firstItem="Vxj-uJ-kKP" firstAttribute="top" secondItem="6iT-Em-wAG" secondAttribute="bottom" constant="-198" id="ZZn-KV-Ped"/>
+                            <constraint firstItem="9QH-ud-8Dw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a2v-H3-uDa"/>
                             <constraint firstItem="nUy-DH-VXW" firstAttribute="top" secondItem="Vxj-uJ-kKP" secondAttribute="bottom" constant="-108" id="bH2-kP-bdT"/>
                             <constraint firstItem="Vxj-uJ-kKP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bTV-Vg-HO6"/>
                             <constraint firstItem="Vxj-uJ-kKP" firstAttribute="top" secondItem="KK7-r6-HBh" secondAttribute="bottom" constant="-81" id="ebe-b3-BHZ"/>
+                            <constraint firstItem="9QH-ud-8Dw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="koG-zv-dcN"/>
                             <constraint firstItem="lP8-Gc-bTd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="rrA-Ul-5ym"/>
                             <constraint firstItem="Vxj-uJ-kKP" firstAttribute="leading" secondItem="w53-IA-EZ4" secondAttribute="trailing" constant="-91" id="tqK-xy-NiQ"/>
                             <constraint firstItem="Eu6-wk-zue" firstAttribute="leading" secondItem="Vxj-uJ-kKP" secondAttribute="trailing" constant="-103" id="uBx-D9-Ctm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lP8-Gc-bTd" secondAttribute="trailing" constant="-20" id="v06-wN-wRj"/>
                             <constraint firstItem="Vxj-uJ-kKP" firstAttribute="top" secondItem="w53-IA-EZ4" secondAttribute="bottom" constant="-198" id="vOX-b3-c1f"/>
                             <constraint firstItem="Vxj-uJ-kKP" firstAttribute="leading" secondItem="cMG-WU-2M2" secondAttribute="trailing" constant="-91" id="vcA-gZ-lVy"/>
+                            <constraint firstItem="EXl-S5-pV2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="zb9-1Y-lHY"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="button" destination="oSt-sf-Q9W" id="SPk-Kn-fDh"/>
+                        <outlet property="endOfTheGameLabel" destination="9QH-ud-8Dw" id="0yl-om-Ozf"/>
+                        <outlet property="playAgainButton" destination="EXl-S5-pV2" id="cfU-QT-BzT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
