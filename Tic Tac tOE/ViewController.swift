@@ -14,18 +14,77 @@ class ViewController: UIViewController {
     
     var currentPlayer = 1 // even for x, odd for O
     
+    var gameState = [0 ,0 ,0,
+                     0, 0, 0,
+                     0, 0, 0]
+    
+    var gameActive = true
+    
+    let winningCombinations = [
+                                //Graphical representation of the possible combinantions
+        
+                                //Horizontal representation
+                                [0, 1, 2],
+                                [3, 4, 5],
+                                [6, 7, 8],
+                                
+                                //Vertical representation
+                                [0,
+                                 3,
+                                 6],
+                                
+                                [   1,
+                                    4,
+                                    7],
+                                
+                                [      2,
+                                       5,
+                                       8],
+                                
+                                //Diagonal representation
+                                [0,
+                                    4,
+                                       8],
+                                
+                                [      2,
+                                    4,
+                                 6] ]
+                                
+                                
+    
     @IBAction func buttonPressed(sender: AnyObject) {
-        if (currentPlayer % 2 == 0){
-            sender.setImage(UIImage(named: "x.png"), forState: .Normal)
-        }else{
-            sender.setImage(UIImage(named: "o.png"), forState: .Normal)
+        if (gameState[sender.tag] == 0 && gameActive){
+            if (currentPlayer % 2 == 0){
+                sender.setImage(UIImage(named: "x.png"), forState: .Normal)
+                gameState[sender.tag] = 2 // player 2
+            }else{
+                sender.setImage(UIImage(named: "o.png"), forState: .Normal)
+                gameState[sender.tag] = 1 // player 1
+
+            }
+            currentPlayer += 1
         }
-        currentPlayer += 1
+        
+        endOfTheGameListener()
+
+        
         
     }
     
     private func endOfTheGameListener(){
-        
+      //  print ("End of the game listener executed")
+        for combinations in winningCombinations{
+            if (gameState[combinations[0]] != 0 &&
+                gameState[combinations[0]] == gameState[combinations[1]] &&
+                gameState[combinations[1]] == gameState[combinations[2]]){
+                if (gameState[combinations[0]] == 1){
+                    print("Player one won!")
+                }else{
+                    print("Player two won!")
+                }
+                self.gameActive = false
+            }
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
