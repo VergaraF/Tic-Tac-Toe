@@ -43,7 +43,6 @@
                                     <constraint firstAttribute="width" constant="91" id="VSb-yg-y0D"/>
                                     <constraint firstAttribute="height" constant="81" id="W4l-O4-6Kj"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="o.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Php-Yw-AKx"/>
                                 </connections>
@@ -54,7 +53,6 @@
                                     <constraint firstAttribute="height" constant="81" id="YG8-2V-lXN"/>
                                     <constraint firstAttribute="width" constant="91" id="fTh-BC-Zpb"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="o.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GaK-uS-AER"/>
                                 </connections>
@@ -67,7 +65,6 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="81" id="TU7-sJ-pnE"/>
                                     <constraint firstAttribute="height" constant="81" id="iez-vV-TZ1"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="o.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DtT-Kw-iQw"/>
                                 </connections>
@@ -80,7 +77,6 @@
                                     <constraint firstAttribute="width" constant="91" id="e2v-eP-kdr"/>
                                     <constraint firstAttribute="height" constant="81" id="fTe-ze-LUn"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="o.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lS0-g5-B8m"/>
                                 </connections>
@@ -91,7 +87,6 @@
                                     <constraint firstAttribute="height" constant="81" id="cui-4h-GTc"/>
                                     <constraint firstAttribute="width" constant="91" id="vQ2-Vh-hLl"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="o.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ox0-nV-bPZ"/>
                                 </connections>
@@ -104,7 +99,6 @@
                                     <constraint firstAttribute="height" constant="81" id="uHA-xW-TFI"/>
                                     <constraint firstAttribute="width" constant="91" id="z50-lu-6IA"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="o.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aAC-s4-mts"/>
                                 </connections>
@@ -119,7 +113,6 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="91" id="JHr-V6-5N0"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="81" id="Ldc-cZ-hd6"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="o.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nTo-H1-5pq"/>
                                 </connections>
@@ -132,7 +125,6 @@
                                     <constraint firstAttribute="width" constant="91" id="a1s-WO-qNL"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="91" id="leG-Om-hMW"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="o.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NP2-6u-zDh"/>
                                 </connections>
@@ -147,7 +139,6 @@
                                     <constraint firstAttribute="width" constant="91" id="cXJ-XA-akh"/>
                                     <constraint firstAttribute="height" constant="81" id="sfK-IC-yHx"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="o.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ouu-H1-lCy"/>
                                 </connections>
@@ -193,6 +184,5 @@
     </scenes>
     <resources>
         <image name="board.png" width="1156" height="1196"/>
-        <image name="o.png" width="144" height="127"/>
     </resources>
 </document>

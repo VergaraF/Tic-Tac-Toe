@@ -12,11 +12,21 @@ class ViewController: UIViewController {
 
     @IBOutlet var button: UIButton!
     
+    var currentPlayer = 1 // even for x, odd for O
+    
     @IBAction func buttonPressed(sender: AnyObject) {
-        sender.setImage(UIImage(named: "x.png"), forState: .Normal)
+        if (currentPlayer % 2 == 0){
+            sender.setImage(UIImage(named: "x.png"), forState: .Normal)
+        }else{
+            sender.setImage(UIImage(named: "o.png"), forState: .Normal)
+        }
+        currentPlayer += 1
+        
     }
     
-    
+    private func endOfTheGameListener(){
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
