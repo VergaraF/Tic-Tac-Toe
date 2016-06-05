@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playAgainButton(sender: AnyObject) {
-        print("_____BEGIN______")
+ /*       print("_____BEGIN______")
         for i in 0 ..< gameState.count{
             
             print(String(gameState[i]) + "<- Current game state")
@@ -82,9 +82,12 @@ class ViewController: UIViewController {
             print(String(gameState[i]) + "<- Old game state")
             print("Execution # " + String(i))
         }
-        print("______END_____")
+        print("______END_____")*/
+        gameState = [Int](count: 9, repeatedValue: 0)
         gameActive = true
         hideLabelAndPlayAgainButton(true, firstTime:  false)
+        endOfTheGameLabel.hidden = true
+        playAgainButton.hidden   = true
         
     }
     
@@ -103,14 +106,15 @@ class ViewController: UIViewController {
                     setLabelAndShowButton("Play two WON!", colour: UIColor.greenColor())
                 }
                 
+                currentPlayer = 1
                 gameActive = false
                 thereIsAWinner = true
                 
                 UIView.animateWithDuration(0.3, animations: {
-                    self.endOfTheGameLabel.center = CGPoint(x: self.endOfTheGameLabel.center.x + 400, y: self.endOfTheGameLabel.center.y)
+                    self.endOfTheGameLabel.center = CGPoint(x: self.endOfTheGameLabel.center.x + 600, y: self.endOfTheGameLabel.center.y)
                 })
                 UIView.animateWithDuration(1, animations: {
-                    self.playAgainButton.center   = CGPoint(x: self.playAgainButton.center.x - 400, y: self.playAgainButton.center.y)
+                    self.playAgainButton.center   = CGPoint(x: self.playAgainButton.center.x - 600, y: self.playAgainButton.center.y)
                 })
             }
         }
@@ -150,8 +154,8 @@ class ViewController: UIViewController {
             
         }else if firstTime{
         
-            endOfTheGameLabel.center = CGPoint(x: endOfTheGameLabel.center.x - 400, y: endOfTheGameLabel.center.y)
-            playAgainButton.center   = CGPoint(x: playAgainButton.center.x + 400, y: playAgainButton.center.y)
+            endOfTheGameLabel.center = CGPoint(x: endOfTheGameLabel.center.x - 600, y: endOfTheGameLabel.center.y)
+            playAgainButton.center   = CGPoint(x: playAgainButton.center.x + 600, y: playAgainButton.center.y)
             endOfTheGameLabel.hidden = hide
             playAgainButton.hidden   = hide
         }
