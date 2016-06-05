@@ -20,6 +20,7 @@ class ViewController: UIViewController {
                      0, 0, 0]
     
     var gameActive = true
+    var thereIsAWinner = false
     
     let winningCombinations = [
                                 //Graphical representation of the possible combinantions
@@ -65,12 +66,28 @@ class ViewController: UIViewController {
             }
             currentPlayer += 1
             endOfTheGameListener()
-        }else if !gameActive{
+        }else if !gameActive && !thereIsAWinner{
             setLabelAndShowButton("It's a DRAW", colour: UIColor.whiteColor())
         }
         
        // endOfTheGameListener()
     }
+    
+    @IBAction func playAgainButton(sender: AnyObject) {
+        print("_____BEGIN______")
+        for i in 0 ..< gameState.count{
+            
+            print(String(gameState[i]) + "<- Current game state")
+            gameState[i] = 0
+            print(String(gameState[i]) + "<- Old game state")
+            print("Execution # " + String(i))
+        }
+        print("______END_____")
+        gameActive = true
+        hideLabelAndPlayAgainButton(true, firstTime:  false)
+        
+    }
+    
     
     private func endOfTheGameListener(){
       //  print ("End of the game listener executed")
@@ -86,27 +103,62 @@ class ViewController: UIViewController {
                     setLabelAndShowButton("Play two WON!", colour: UIColor.greenColor())
                 }
                 
-                self.gameActive = false
+                gameActive = false
+                thereIsAWinner = true
+                
+                UIView.animateWithDuration(0.3, animations: {
+                    self.endOfTheGameLabel.center = CGPoint(x: self.endOfTheGameLabel.center.x + 400, y: self.endOfTheGameLabel.center.y)
+                })
+                UIView.animateWithDuration(1, animations: {
+                    self.playAgainButton.center   = CGPoint(x: self.playAgainButton.center.x - 400, y: self.playAgainButton.center.y)
+                })
             }
         }
     }
     
     func setLabelAndShowButton(label: String, colour: UIColor){
-        self.endOfTheGameLabel.text = label
-        self.endOfTheGameLabel.textColor = colour
-        self.endOfTheGameLabel.hidden = false
-        self.playAgainButton.hidden = false
+        endOfTheGameLabel.text      = label
+        endOfTheGameLabel.textColor = colour
+        hideLabelAndPlayAgainButton(false, firstTime: false)
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.endOfTheGameLabel.hidden = true
-        self.playAgainButton.hidden   = true
+        hideLabelAndPlayAgainButton(true, firstTime: true)
+       
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
 
-
+    func hideLabelAndPlayAgainButton(hide: Bool, firstTime: Bool){
+        if !firstTime && hide{
+            UIView.animateWithDuration(0.4, animations: {
+                self.endOfTheGameLabel.center = CGPoint(x: self.endOfTheGameLabel.center.x - 600, y: self.endOfTheGameLabel.center.y)
+               // self.endOfTheGameLabel.hidden = hide
+                
+            })
+            UIView.animateWithDuration(0.6, animations: {
+                self.playAgainButton.center   = CGPoint(x: self.playAgainButton.center.x + 600, y: self.playAgainButton.center.y)
+              //  self.playAgainButton.hidden   = hide
+                
+            })
+        }else if !firstTime && !hide{
+            endOfTheGameLabel.hidden = hide
+            playAgainButton.hidden   = hide
+            
+        }else if firstTime{
+        
+            endOfTheGameLabel.center = CGPoint(x: endOfTheGameLabel.center.x - 400, y: endOfTheGameLabel.center.y)
+            playAgainButton.center   = CGPoint(x: playAgainButton.center.x + 400, y: playAgainButton.center.y)
+            endOfTheGameLabel.hidden = hide
+            playAgainButton.hidden   = hide
+        }
+        
+        
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
