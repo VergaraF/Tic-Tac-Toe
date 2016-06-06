@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var endOfTheGameLabel: UILabel!
     @IBOutlet var playAgainButton: UIButton!
     @IBOutlet var button: UIButton!
+    //used to know if it is a DRAW
     var drawValidator = 0
     
     var gameState = [0 ,0 ,0,
@@ -67,35 +68,24 @@ class ViewController: UIViewController {
             }
             drawValidator += gameState[sender.tag]
             currentPlayer += 1
-           // drawValidator += currentPlayer
-          //  endOfTheGameListener()
         }
         print(gameActive)
         endOfTheGameListener()
     }
     
     @IBAction func playAgainButton(sender: AnyObject) {
- /*       print("_____BEGIN______")
-        for i in 0 ..< gameState.count{
-            
-            print(String(gameState[i]) + "<- Current game state")
-            gameState[i] = 0
-            print(String(gameState[i]) + "<- Old game state")
-            print("Execution # " + String(i))
-        }
-        print("______END_____")*/
+
         gameState = [Int](count: 9, repeatedValue: 0)
         gameActive = true
         thereIsAWinner = false
         hideLabelAndPlayAgainButton(true, firstTime:  false)
-       // endOfTheGameLabel.hidden = true
-       // playAgainButton.hidden   = true
         
     }
     
     
     private func endOfTheGameListener(){
-      //  print ("End of the game listener executed")
+ 
+        //checking if someone win
         for combinations in winningCombinations{
             
             if (gameState[combinations[0]] != 0 &&
@@ -115,6 +105,7 @@ class ViewController: UIViewController {
             }
         }
         
+        //checking if it is a draw
         var validator = 0
         for i in 0 ..< gameState.count{
             if gameState[i] == 1{
@@ -134,6 +125,7 @@ class ViewController: UIViewController {
         }
         
         
+        //Animations of send of the game label and play again button
         UIView.animateWithDuration(0.3, animations: {
             self.endOfTheGameLabel.center = CGPoint(x: self.endOfTheGameLabel.center.x + 600, y: self.endOfTheGameLabel.center.y)
         })
@@ -149,17 +141,10 @@ class ViewController: UIViewController {
         hideLabelAndPlayAgainButton(false, firstTime: false)
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        hideLabelAndPlayAgainButton(true, firstTime: true)
-       
-
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
 
     func hideLabelAndPlayAgainButton(hide: Bool, firstTime: Bool){
+        
+        //If it isnt the first time the game gets executed and we want to hide them
         if !firstTime && hide{
             UIView.animateWithDuration(0.4, animations: {
                 self.endOfTheGameLabel.center = CGPoint(x: self.endOfTheGameLabel.center.x - 600, y: self.endOfTheGameLabel.center.y)
@@ -171,10 +156,13 @@ class ViewController: UIViewController {
                 self.playAgainButton.hidden   = hide
                 
             })
+            
+        //If it isnt the first time the game gets executed and we want to show them
         }else if !firstTime && !hide{
             endOfTheGameLabel.hidden = hide
             playAgainButton.hidden   = hide
-            
+        
+        //If it is the first time the game gets executed 
         }else if firstTime{
         
             endOfTheGameLabel.center = CGPoint(x: endOfTheGameLabel.center.x - 600, y: endOfTheGameLabel.center.y)
@@ -185,6 +173,15 @@ class ViewController: UIViewController {
         
         
         
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        hideLabelAndPlayAgainButton(true, firstTime: true)
+        
+        
+        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
