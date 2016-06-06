@@ -66,8 +66,9 @@ class ViewController: UIViewController {
             }
             currentPlayer += 1
             endOfTheGameListener()
-        }else if !gameActive && !thereIsAWinner{
+        }else if gameActive && !thereIsAWinner{
             setLabelAndShowButton("It's a DRAW", colour: UIColor.whiteColor())
+            thereIsAWinner = true
         }
         
        // endOfTheGameListener()
@@ -85,9 +86,10 @@ class ViewController: UIViewController {
         print("______END_____")*/
         gameState = [Int](count: 9, repeatedValue: 0)
         gameActive = true
+        thereIsAWinner = false
         hideLabelAndPlayAgainButton(true, firstTime:  false)
-        endOfTheGameLabel.hidden = true
-        playAgainButton.hidden   = true
+       // endOfTheGameLabel.hidden = true
+       // playAgainButton.hidden   = true
         
     }
     
@@ -140,12 +142,12 @@ class ViewController: UIViewController {
         if !firstTime && hide{
             UIView.animateWithDuration(0.4, animations: {
                 self.endOfTheGameLabel.center = CGPoint(x: self.endOfTheGameLabel.center.x - 600, y: self.endOfTheGameLabel.center.y)
-               // self.endOfTheGameLabel.hidden = hide
+                self.endOfTheGameLabel.hidden = hide
                 
             })
             UIView.animateWithDuration(0.6, animations: {
                 self.playAgainButton.center   = CGPoint(x: self.playAgainButton.center.x + 600, y: self.playAgainButton.center.y)
-              //  self.playAgainButton.hidden   = hide
+                self.playAgainButton.hidden   = hide
                 
             })
         }else if !firstTime && !hide{
