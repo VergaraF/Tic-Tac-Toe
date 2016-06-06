@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var endOfTheGameLabel: UILabel!
     @IBOutlet var playAgainButton: UIButton!
     @IBOutlet var button: UIButton!
+    var drawValidator = 0
     
     var gameState = [0 ,0 ,0,
                      0, 0, 0,
@@ -64,14 +65,13 @@ class ViewController: UIViewController {
                 gameState[sender.tag] = 1 // player 1
 
             }
+            drawValidator += gameState[sender.tag]
             currentPlayer += 1
-            endOfTheGameListener()
-        }else if gameActive && !thereIsAWinner{
-            setLabelAndShowButton("It's a DRAW", colour: UIColor.whiteColor())
-            thereIsAWinner = true
+           // drawValidator += currentPlayer
+          //  endOfTheGameListener()
         }
-        
-       // endOfTheGameListener()
+        print(gameActive)
+        endOfTheGameListener()
     }
     
     @IBAction func playAgainButton(sender: AnyObject) {
@@ -112,14 +112,35 @@ class ViewController: UIViewController {
                 gameActive = false
                 thereIsAWinner = true
                 
-                UIView.animateWithDuration(0.3, animations: {
-                    self.endOfTheGameLabel.center = CGPoint(x: self.endOfTheGameLabel.center.x + 600, y: self.endOfTheGameLabel.center.y)
-                })
-                UIView.animateWithDuration(1, animations: {
-                    self.playAgainButton.center   = CGPoint(x: self.playAgainButton.center.x - 600, y: self.playAgainButton.center.y)
-                })
             }
         }
+        
+        var validator = 0
+        for i in 0 ..< gameState.count{
+            if gameState[i] == 1{
+                validator += 1
+            }else if gameState[i] == 2{
+                validator += 2
+            }else if gameState[i] == 0{
+                validator -= 1
+            }
+        
+        }
+        
+        if validator == drawValidator {
+            setLabelAndShowButton("It's a DRAW", colour: UIColor.whiteColor())
+            thereIsAWinner = true
+            gameActive = false
+        }
+        
+        
+        UIView.animateWithDuration(0.3, animations: {
+            self.endOfTheGameLabel.center = CGPoint(x: self.endOfTheGameLabel.center.x + 600, y: self.endOfTheGameLabel.center.y)
+        })
+        UIView.animateWithDuration(1, animations: {
+            self.playAgainButton.center   = CGPoint(x: self.playAgainButton.center.x - 600, y: self.playAgainButton.center.y)
+        })
+        
     }
     
     func setLabelAndShowButton(label: String, colour: UIColor){
