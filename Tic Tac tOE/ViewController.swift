@@ -57,16 +57,16 @@ class ViewController: UIViewController {
                                 
     
     @IBAction func buttonPressed(sender: AnyObject) {
-        if (gameState[sender.tag] == 0 && gameActive){
+        if (gameState[sender.tag-1] == 0 && gameActive){
             if (currentPlayer % 2 == 0){
                 sender.setImage(UIImage(named: "x.png"), forState: .Normal)
-                gameState[sender.tag] = 2 // player 2
+                gameState[sender.tag-1] = 2 // player 2
             }else{
                 sender.setImage(UIImage(named: "o.png"), forState: .Normal)
-                gameState[sender.tag] = 1 // player 1
+                gameState[sender.tag-1] = 1 // player 1
 
             }
-            drawValidator += gameState[sender.tag]
+            drawValidator += gameState[sender.tag-1]
             currentPlayer += 1
         }
         print(gameActive)
@@ -80,6 +80,12 @@ class ViewController: UIViewController {
         thereIsAWinner = false
         hideLabelAndPlayAgainButton(true, firstTime:  false)
         
+        var buttonToClear: UIButton
+        for i in 1..<10{
+            buttonToClear = view.viewWithTag(i) as! UIButton
+            buttonToClear.setImage(nil, forState: .Normal)
+        }
+        drawValidator = 0
     }
     
     
@@ -118,6 +124,7 @@ class ViewController: UIViewController {
         
         }
         
+        print("Validator is " + String(validator) + " and drawValidator is " + String(drawValidator))
         if validator == drawValidator {
             setLabelAndShowButton("It's a DRAW", colour: UIColor.whiteColor())
             thereIsAWinner = true
@@ -162,7 +169,7 @@ class ViewController: UIViewController {
             endOfTheGameLabel.hidden = hide
             playAgainButton.hidden   = hide
         
-        //If it is the first time the game gets executed 
+        //If it is the first time the game gets executed
         }else if firstTime{
         
             endOfTheGameLabel.center = CGPoint(x: endOfTheGameLabel.center.x - 600, y: endOfTheGameLabel.center.y)
