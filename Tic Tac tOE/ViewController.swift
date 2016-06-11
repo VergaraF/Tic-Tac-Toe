@@ -70,7 +70,11 @@ class ViewController: UIViewController {
             currentPlayer += 1
         }
         print(gameActive)
-        endOfTheGameListener()
+        
+        if gameActive{
+            endOfTheGameListener()
+        }
+        
     }
     
     @IBAction func playAgainButton(sender: AnyObject) {
