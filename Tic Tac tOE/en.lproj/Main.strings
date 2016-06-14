@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "It's a DRAW"; ObjectID = "9QH-ud-8Dw"; */
+"9QH-ud-8Dw.text" = "It's a DRAW";
+
+/* Class = "UIButton"; normalTitle = "Play Again"; ObjectID = "EXl-S5-pV2"; */
+"EXl-S5-pV2.normalTitle" = "Play Again";
+
+/* Class = "UINavigationItem"; title = "Tic Tac Toe"; ObjectID = "c1L-8Z-QpA"; */
+"c1L-8Z-QpA.title" = "Tic Tac Toe";
