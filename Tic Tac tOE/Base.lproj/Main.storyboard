@@ -33,7 +33,9 @@
                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="27"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Tic Tac Toe" id="c1L-8Z-QpA"/>
+                                    <navigationItem title="Tic Tac Toe" id="c1L-8Z-QpA">
+                                        <barButtonItem key="rightBarButtonItem" tag="20" image="032 copy.png" style="done" id="8M5-3Q-tia"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSt-sf-Q9W">
@@ -208,6 +210,8 @@
                             <constraint firstItem="EXl-S5-pV2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="zb9-1Y-lHY"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="button" destination="oSt-sf-Q9W" id="SPk-Kn-fDh"/>
@@ -221,6 +225,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="032 copy.png" width="61" height="51"/>
         <image name="board.png" width="1156" height="1196"/>
     </resources>
 </document>
